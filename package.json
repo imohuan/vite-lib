@@ -1,6 +1,6 @@
 {
-  "name": "imohuan-test-project",
-  "version": "0.0.3",
+  "name": "vite-lib",
+  "version": "0.0.0",
   "description": "",
   "keywords": [],
   "author": "",
@@ -10,17 +10,17 @@
     "package.json"
   ],
   "types": "./dist/types/index.d.ts",
-  "main": "./dist/imohuan-cli-cjs.js",
-  "module": "./dist/imohuan-cli-es.js",
+  "main": "./dist/lib-cjs.js",
+  "module": "./dist/lib-es.js",
   "exports": {
     ".": {
-      "import": "./dist/imohuan-cli-es.js",
-      "require": "./dist/imohuan-cli-cjs.js"
+      "import": "./dist/lib-es.js",
+      "require": "./dist/lib-cjs.js"
     }
   },
   "scripts": {
-    "dev": "nodemon --watch \"./src/index.ts\" --exec \"vite build --mode development && node ./dist/imohuan-cli-cjs.js\"",
-    "esbuild:dev": "nodemon --watch \"./src/index.ts\" --exec \"esbuild --bundle src/index.ts --outfile=dist/cjs.js --minify --format=cjs --external:chalk && node ./dist/cjs.js\"",
+    "dev": "nodemon --watch \"./src/index.ts\" --exec \"vite build --mode development && node ./dist/lib-cjs.js\"",
+    "esbuild:dev": "nodemon --watch \"./src/index.ts\" --exec \"esbuild --bundle src/index.ts --outfile=dist/index.js --minify --format=cjs --external:chalk && node ./dist/index.js\"",
     "build": "vite build",
     "test": "vitest --ui --open"
   },

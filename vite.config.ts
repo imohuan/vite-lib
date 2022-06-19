@@ -15,17 +15,17 @@ export default defineConfig(({ command, mode }) => {
       sourcemap: true,
       lib: {
         entry: resolve(__dirname, "./src/index.ts"),
+        // TODO 默认导出3中方式,这里需要根据自己的实际情况修改
         formats: ["cjs", "es", "iife"],
         // iife 模式的全局名称
-        name: "Imohuan",
+        name: "Lib",
         fileName: (format) => {
-          return `imohuan-cli-${format}.js`;
+          return `lib-${format}.js`;
         }
       },
       rollupOptions: {
-        // input: resolve(""),
         external: builtinModules.concat(["chalk"])
-        // globals[name] 为external排除包的全局名称
+        // output.globals[name] 为external排除包的全局名称
         // output: { globals: { chalk: "Chalk" } },
       }
     },
