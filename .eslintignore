@@ -1,0 +1,9 @@
+.history
+.husky
+.vscode
+dist
+node_modules
+pnpm-lock.yaml
+!.eslintrc.js
+!.cz-config.js
+!.prettierrc.js
