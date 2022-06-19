@@ -30,7 +30,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", "packages", "typings", "*.config.ts", "cypress/**/*.ts"],
+  "include": ["src", "typings", "*.config.ts"],
   "exclude": ["node_modules", "**/dist", "**/__tests__/**/*", "**/test/**", "**/tests/**"],
   "ts-node": {
     "compilerOptions": {
