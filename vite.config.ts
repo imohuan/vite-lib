@@ -1,9 +1,9 @@
 import { builtinModules } from "module";
+import { resolve } from "path";
 import { defineConfig, UserConfigExport } from "vite";
 import Dts from "vite-plugin-dts";
-import { resolve } from "path";
 
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
   const option: UserConfigExport = {
     clearScreen: true,
     optimizeDeps: {
