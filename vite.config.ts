@@ -1,10 +1,10 @@
-import { builtinModules } from "node:module";
-import { defineConfig } from "vite";
+import { builtinModules } from "module";
+import { defineConfig, UserConfigExport } from "vite";
 import Dts from "vite-plugin-dts";
 import { resolve } from "path";
 
 export default defineConfig(({ command, mode }) => {
-  const option = {
+  const option: UserConfigExport = {
     clearScreen: true,
     optimizeDeps: {
       extensions: [".ts", ".js"]
@@ -32,13 +32,15 @@ export default defineConfig(({ command, mode }) => {
     plugins: []
   };
 
-  if (mode === "production"){
+  if (mode === "production") {
     /** https://github.com/qmhc/vite-plugin-dts/blob/HEAD/README.zh-CN.md */
-    option.plugins.push(Dts({
-      outputDir: resolve(__dirname, "dist/types"),
-      skipDiagnostics: false,
-      logDiagnostics: true
-    }))
+    option.plugins!.push(
+      Dts({
+        outputDir: resolve(__dirname, "dist/types"),
+        skipDiagnostics: false,
+        logDiagnostics: true
+      })
+    );
   }
 
   return option;

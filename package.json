@@ -2,8 +2,9 @@
   "name": "vite-lib",
   "version": "0.0.0",
   "description": "",
-  "keywords": [],
   "author": "",
+  "homepage": "",
+  "keywords": [],
   "license": "ISC",
   "files": [
     "dist",
